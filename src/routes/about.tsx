@@ -1,18 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import salonImage from "@/assets/salon-interior.jpg";
-
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About | NailyFuzz" },
-      { name: "description", content: "Learn about NailyFuzz, a boutique nail salon in Mumbai dedicated to artistry, self-care, and beautiful nail experiences." },
+      { name: "description", content: "Founded with a passion for nail art, NailyFuzz has been serving Mumbai with quality, hygienic, and creative nail services." },
       { property: "og:title", content: "About | NailyFuzz" },
-      { property: "og:description", content: "Learn about NailyFuzz, a boutique nail salon in Mumbai dedicated to artistry, self-care, and beautiful nail experiences." },
+      { property: "og:description", content: "Founded with a passion for nail art, NailyFuzz has been serving Mumbai with quality, hygienic, and creative nail services." },
     ],
   }),
   component: AboutPage,
 });
+
+const placeholderUrl = (text: string) =>
+  `https://placehold.co/400x500/fdf2f8/b8860b?text=${encodeURIComponent(text)}`;
+
+const team = [
+  { name: "Founder", role: "Creative Director" },
+  { name: "Senior Artist", role: "Nail Specialist" },
+  { name: "Studio Manager", role: "Client Care" },
+];
 
 function AboutPage() {
   return (
@@ -22,8 +29,8 @@ function AboutPage() {
           <h1 className="font-display text-4xl text-foreground sm:text-5xl">
             About NailyFuzz
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            A small studio with a big love for detail. We're here to make every visit feel like a little escape.
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+            Founded with a passion for nail art, NailyFuzz has been serving Mumbai with quality, hygienic, and creative nail services.
           </p>
         </div>
       </section>
@@ -33,28 +40,28 @@ function AboutPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="relative overflow-hidden rounded-3xl shadow-soft">
               <img
-                src={salonImage}
-                alt="NailyFuzz nail salon interior with blush pink chairs and gold accents"
+                src={placeholderUrl("NailyFuzz Studio")}
+                alt="NailyFuzz nail salon interior placeholder"
                 className="h-full w-full object-cover"
-                width={1920}
-                height={1088}
+                width={600}
+                height={600}
                 loading="lazy"
               />
             </div>
             <div className="space-y-6">
               <h2 className="font-display text-3xl text-foreground sm:text-4xl">
-                Where beauty meets calm
+                A studio built on passion
               </h2>
               <p className="leading-relaxed text-muted-foreground">
-                NailyFuzz was founded in the heart of Mumbai with one simple belief: a nail appointment should be more than maintenance—it should be a moment you look forward to. Our studio is designed in soft blush, warm white, and touches of gold to create a space that feels like a breath of fresh air.
+                NailyFuzz began as a small dream: to create a calm, beautiful space where every client leaves feeling confident and cared for. What started as a passion for nail art has grown into a trusted Mumbai studio known for quality, hygiene, and creativity.
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                Our technicians are trained in the latest techniques, from builder gel and structured manicures to intricate hand-painted nail art. We listen carefully, work gently, and obsess over the details so you leave feeling polished and pampered.
+                We believe nail care is self-care. Every appointment is a chance to slow down, enjoy the process, and walk out with nails that feel perfectly you. From classic manicures to intricate hand-painted art, our team brings skill and attention to every detail.
               </p>
               <div className="grid grid-cols-3 gap-4 pt-4">
                 <div className="text-center">
                   <p className="font-display text-3xl text-gold">5+</p>
-                  <p className="mt-1 text-xs text-muted-foreground">Years of artistry</p>
+                  <p className="mt-1 text-xs text-muted-foreground">Years of service</p>
                 </div>
                 <div className="text-center">
                   <p className="font-display text-3xl text-gold">3k+</p>
@@ -62,7 +69,7 @@ function AboutPage() {
                 </div>
                 <div className="text-center">
                   <p className="font-display text-3xl text-gold">100%</p>
-                  <p className="mt-1 text-xs text-muted-foreground">Sterile tools</p>
+                  <p className="mt-1 text-xs text-muted-foreground">Hygienic tools</p>
                 </div>
               </div>
             </div>
@@ -74,37 +81,27 @@ function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-display text-3xl text-foreground sm:text-4xl">
-              Our values
+              Meet the team
             </h2>
             <p className="mt-4 text-muted-foreground">
-              The little things that make NailyFuzz feel like home.
+              The friendly faces behind every flawless set.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {[
-              {
-                title: "Care-first approach",
-                description: "We prioritize nail health and never rush a treatment. Every set is built on a foundation of strong, cared-for nails.",
-              },
-              {
-                title: "Personal style",
-                description: "Your nails are an accessory you wear every day. We design shapes, colors, and art that feel like *you*.",
-              },
-              {
-                title: "Impeccable hygiene",
-                description: "From sterilized tools to single-use disposables, cleanliness is woven into every step of our service.",
-              },
-            ].map((value) => (
-              <div
-                key={value.title}
-                className="rounded-2xl border border-border bg-card p-6"
-              >
-                <h3 className="font-display text-xl text-card-foreground">
-                  {value.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {value.description}
-                </p>
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {team.map((member) => (
+              <div key={member.name} className="text-center">
+                <div className="mx-auto mb-4 aspect-[4/5] w-full max-w-[260px] overflow-hidden rounded-2xl bg-card shadow-soft">
+                  <img
+                    src={placeholderUrl(member.name)}
+                    alt={`${member.name} photo placeholder`}
+                    className="h-full w-full object-cover"
+                    width={400}
+                    height={500}
+                    loading="lazy"
+                  />
+                </div>
+                <h3 className="font-display text-xl text-foreground">{member.name}</h3>
+                <p className="text-sm text-muted-foreground">{member.role}</p>
               </div>
             ))}
           </div>
