@@ -139,8 +139,8 @@ function Footer() {
           <div className="space-y-4">
             <h4 className="font-display text-base text-foreground">Hours</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Mon – Sat: 10am – 8pm</li>
-              <li>Sunday: 11am – 6pm</li>
+              <li>Tue – Sun: 10 AM – 8 PM</li>
+              <li>Monday: Closed</li>
             </ul>
           </div>
 
