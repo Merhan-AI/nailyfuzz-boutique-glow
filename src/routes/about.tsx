@@ -29,9 +29,10 @@ function AboutPage() {
           <h1 className="font-display text-4xl text-foreground sm:text-5xl">
             About NailyFuzz
           </h1>
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
             Founded with a passion for nail art, NailyFuzz has been serving Mumbai with quality, hygienic, and creative nail services.
           </p>
+
         </div>
       </section>
 
