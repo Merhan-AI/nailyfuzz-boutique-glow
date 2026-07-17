@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
       { title: "NailyFuzz | Premium Nail Salon in Mumbai" },
       { name: "description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon for gel nails, nail art, and premium manicures." },
       { property: "og:title", content: "NailyFuzz | Premium Nail Salon in Mumbai" },
-      { property: "og:description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon." },
+      { property: "og:description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon for gel nails, nail art, and premium manicures." },
     ],
   }),
   component: Index,
