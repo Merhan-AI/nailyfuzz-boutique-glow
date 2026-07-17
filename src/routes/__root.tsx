@@ -7,24 +7,186 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
+
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/services", label: "Services" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
+];
+
+function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 12);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-background/95 backdrop-blur-md shadow-soft" : "bg-background"
+      }`}
+    >
+      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <Link to="/" className="flex items-center gap-2">
+          <span className="font-display text-2xl tracking-tight text-foreground">
+            Naily<span className="text-gold">Fuzz</span>
+          </span>
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              activeProps={{ className: "text-gold font-medium" }}
+              inactiveProps={{ className: "text-foreground/80 hover:text-gold transition-colors" }}
+              activeOptions={{ exact: true }}
+              className="text-sm font-medium tracking-wide"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            to="/contact"
+            className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+          >
+            Book Now
+          </Link>
+        </nav>
+
+        {/* Mobile nav */}
+        <Sheet>
+          <SheetTrigger asChild className="md:hidden">
+            <button
+              type="button"
+              aria-label="Open menu"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-secondary"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-full max-w-xs border-l-border bg-background">
+            <div className="flex flex-col gap-8 pt-8">
+              <Link to="/" className="font-display text-2xl text-foreground">
+                Naily<span className="text-gold">Fuzz</span>
+              </Link>
+              <nav className="flex flex-col gap-6">
+                {navLinks.map((link) => (
+                  <SheetClose asChild key={link.to}>
+                    <Link
+                      to={link.to}
+                      activeProps={{ className: "text-gold font-medium" }}
+                      inactiveProps={{ className: "text-foreground/80 hover:text-gold transition-colors" }}
+                      activeOptions={{ exact: true }}
+                      className="text-lg font-medium"
+                    >
+                      {link.label}
+                    </Link>
+                  </SheetClose>
+                ))}
+              </nav>
+              <SheetClose asChild>
+                <Link
+                  to="/contact"
+                  className="rounded-full bg-foreground px-6 py-3 text-center text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+                >
+                  Book Now
+                </Link>
+              </SheetClose>
+            </div>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-border bg-background">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="space-y-4">
+            <Link to="/" className="font-display text-2xl text-foreground">
+              Naily<span className="text-gold">Fuzz</span>
+            </Link>
+            <p className="text-sm text-muted-foreground">
+              Premium nail artistry in the heart of Mumbai. Where every detail is designed to make you feel radiant.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-display text-base text-foreground">Visit Us</h4>
+            <address className="not-italic text-sm text-muted-foreground leading-relaxed">
+              12, Hill Road, Bandra West<br />
+              Mumbai, Maharashtra 400050
+            </address>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-display text-base text-foreground">Hours</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>Mon – Sat: 10am – 8pm</li>
+              <li>Sunday: 11am – 6pm</li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h4 className="font-display text-base text-foreground">Contact</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li>hello@nailyfuzz.com</li>
+              <li>+91 98765 43210</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} NailyFuzz. All rights reserved.
+          </p>
+          <nav className="flex gap-6 text-xs text-muted-foreground">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="hover:text-gold transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </footer>
+  );
+}
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h1 className="font-display text-7xl text-foreground">404</h1>
+        <h2 className="mt-4 font-display text-xl text-foreground">Page not found</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-full bg-foreground px-6 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
           >
             Go home
           </Link>
@@ -44,7 +206,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+        <h1 className="font-display text-xl tracking-tight text-foreground">
           This page didn't load
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
@@ -56,13 +218,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-full bg-foreground px-6 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded-full border border-border px-6 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
           >
             Go home
           </a>
@@ -77,16 +239,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "NailyFuzz | Premium Nail Salon in Mumbai" },
+      { name: "description", content: "NailyFuzz is a modern nail salon in Mumbai offering manicures, pedicures, nail art, and luxury spa treatments in a soft, feminine boutique setting." },
+      { name: "author", content: "NailyFuzz" },
+      { property: "og:title", content: "NailyFuzz | Premium Nail Salon in Mumbai" },
+      { property: "og:description", content: "NailyFuzz is a modern nail salon in Mumbai offering manicures, pedicures, nail art, and luxury spa treatments." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@nailyfuzz" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -119,8 +287,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 }
