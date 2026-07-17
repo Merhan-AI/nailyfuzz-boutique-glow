@@ -1,12 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Sparkles, Gem, Palette, Footprints, Ruler } from "lucide-react";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services | NailyFuzz" },
-      { name: "description", content: "Explore NailyFuzz nail services: manicures, pedicures, nail art, gel extensions, and spa treatments in Mumbai." },
+      { name: "description", content: "Explore NailyFuzz nail services in Mumbai: Classic Manicure, Gel Manicure, Nail Art, Pedicure, and Nail Extensions." },
       { property: "og:title", content: "Services | NailyFuzz" },
-      { property: "og:description", content: "Explore NailyFuzz nail services: manicures, pedicures, nail art, gel extensions, and spa treatments in Mumbai." },
+      { property: "og:description", content: "Explore NailyFuzz nail services in Mumbai: manicures, gel nails, nail art, pedicures, and extensions." },
     ],
   }),
   component: ServicesPage,
@@ -14,40 +15,39 @@ export const Route = createFileRoute("/services")({
 
 const services = [
   {
+    icon: Sparkles,
     title: "Classic Manicure",
-    price: "₹800",
+    price: "₹300",
+    duration: "30 min",
+    description: "Nail shaping, cuticle care, and a polished finish in the color of your choice.",
+  },
+  {
+    icon: Gem,
+    title: "Gel Manicure",
+    price: "₹600",
     duration: "45 min",
-    description: "Nail shaping, cuticle care, hand massage, and polish of your choice for a clean, elegant finish.",
+    description: "Long-lasting gel polish with a glossy, chip-resistant finish that stays flawless for weeks.",
   },
   {
-    title: "Luxury Pedicure",
-    price: "₹1,400",
+    icon: Palette,
+    title: "Nail Art (per nail)",
+    price: "₹50",
+    duration: "Varies",
+    description: "Custom designs, hand-painted details, foils, or accents to match your personal style.",
+  },
+  {
+    icon: Footprints,
+    title: "Pedicure",
+    price: "₹400",
+    duration: "45 min",
+    description: "Relaxing foot soak, exfoliation, nail care, and a fresh polish for soft, happy feet.",
+  },
+  {
+    icon: Ruler,
+    title: "Nail Extensions",
+    price: "₹1,200",
     duration: "60 min",
-    description: "Exfoliation, callus care, nourishing mask, extended foot massage, and perfect polish application.",
-  },
-  {
-    title: "Gel Extension Set",
-    price: "₹2,200",
-    duration: "75 min",
-    description: "Lightweight gel extensions sculpted to your ideal length and shape, finished with durable, glossy color.",
-  },
-  {
-    title: "Nail Art Design",
-    price: "From ₹500",
-    duration: "30+ min",
-    description: "Custom hand-painted art, foils, gems, or minimal accents—designed to match your mood and outfit.",
-  },
-  {
-    title: "Signature Spa Ritual",
-    price: "₹2,800",
-    duration: "90 min",
-    description: "A full manicure and pedicure ritual with hot towel wraps, scrubs, and deeply hydrating treatments.",
-  },
-  {
-    title: "Bridal Nail Package",
-    price: "₹4,500",
-    duration: "120 min",
-    description: "A complete bridal experience: trial design, gel extensions, intricate art, and touch-up essentials.",
+    description: "Lightweight extensions sculpted to your ideal length and shape for a refined look.",
   },
 ];
 
@@ -60,7 +60,7 @@ function ServicesPage() {
             Our Services
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Thoughtfully designed treatments for hands and feet, delivered with care in our Mumbai studio.
+            Clean, professional nail care designed around your style and comfort.
           </p>
         </div>
       </section>
@@ -73,6 +73,9 @@ function ServicesPage() {
                 key={service.title}
                 className="flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:shadow-soft"
               >
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-gold">
+                  <service.icon className="h-5 w-5" />
+                </div>
                 <div className="flex items-center justify-between gap-4">
                   <h3 className="font-display text-xl text-card-foreground">
                     {service.title}
@@ -91,16 +94,18 @@ function ServicesPage() {
 
           <div className="mt-14 rounded-2xl border border-border bg-secondary/40 p-8 text-center sm:p-12">
             <h2 className="font-display text-2xl text-foreground">
-              Not sure which treatment is right for you?
+              Have a custom design in mind?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-              Our team is happy to recommend the perfect service based on your nail goals and lifestyle.
+              Share your ideas with us on WhatsApp and we'll help you plan the perfect set.
             </p>
             <a
-              href="mailto:hello@nailyfuzz.com"
+              href="https://wa.me/919876543210?text=Hi%20NailyFuzz%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex items-center justify-center rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
             >
-              Ask us a question
+              Chat on WhatsApp
             </a>
           </div>
         </div>
