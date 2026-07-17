@@ -57,10 +57,11 @@ function GalleryPage() {
                     loading="lazy"
                   />
                 </div>
-                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-foreground/60 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent p-5 opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100">
                   <p className="font-display text-lg text-background">{image.text}</p>
                   <p className="text-sm text-background/80">{image.label}</p>
                 </div>
+
               </div>
             ))}
           </div>
