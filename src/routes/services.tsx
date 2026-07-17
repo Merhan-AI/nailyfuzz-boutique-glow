@@ -93,7 +93,7 @@ function ServicesPage() {
           </div>
 
           <div className="mt-14 rounded-2xl border border-border bg-secondary/40 p-8 text-center sm:p-12">
-            <h2 className="font-display text-2xl text-foreground">
+            <h2 className="font-display text-2xl text-foreground sm:text-3xl">
               Have a custom design in mind?
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
