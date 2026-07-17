@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Sparkles, Heart, Clock, ShieldCheck } from "lucide-react";
+import { Sparkles, ShieldCheck, Gem, Wallet, MessageCircle } from "lucide-react";
 
 import heroImage from "@/assets/hero-nails.jpg";
 import gallery1 from "@/assets/gallery-1.jpg";
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "NailyFuzz | Premium Nail Salon in Mumbai" },
-      { name: "description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon for manicures, pedicures, nail art, and spa treatments." },
+      { name: "description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon for gel nails, nail art, and premium manicures." },
       { property: "og:title", content: "NailyFuzz | Premium Nail Salon in Mumbai" },
       { property: "og:description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon." },
     ],
@@ -21,24 +21,24 @@ export const Route = createFileRoute("/")({
 
 const highlights = [
   {
-    icon: Sparkles,
-    title: "Artisan Nail Art",
-    description: "Hand-painted designs and curated embellishments tailored to your style.",
-  },
-  {
-    icon: Heart,
-    title: "Premium Products",
-    description: "We use top-tier, gentle polishes and treatments that love your nails back.",
-  },
-  {
-    icon: Clock,
-    title: "Effortless Booking",
-    description: "Schedule your visit online and let us handle the rest in our serene studio.",
-  },
-  {
     icon: ShieldCheck,
-    title: "Hygiene First",
-    description: "Sterilized tools and strict cleanliness standards for every appointment.",
+    title: "Hygienic Tools",
+    description: "Every tool is sanitized and single-use where possible, because your safety comes first.",
+  },
+  {
+    icon: Sparkles,
+    title: "Skilled Artists",
+    description: "Trained technicians who turn your nail vision into precise, beautiful art.",
+  },
+  {
+    icon: Gem,
+    title: "Premium Products",
+    description: "Top-tier polishes, gels, and treatments that protect and pamper your nails.",
+  },
+  {
+    icon: Wallet,
+    title: "Affordable Pricing",
+    description: "Luxury experiences at prices that make self-care easy to enjoy again and again.",
   },
 ];
 
@@ -50,22 +50,22 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="order-2 lg:order-1">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-                Mumbai's Boutique Nail Studio
-              </p>
-              <h1 className="font-display text-4xl leading-tight text-foreground sm:text-5xl lg:text-6xl">
-                Nails that feel like <span className="italic text-gold">self-care</span>
+              <h1 className="font-display text-4xl leading-[1.1] text-foreground sm:text-5xl lg:text-6xl">
+                Nail Art & Care, Perfected
               </h1>
               <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
-                At NailyFuzz, every manicure is a little luxury. Soft ambience, meticulous care, and designs you'll love long after you leave.
+                NailyFuzz — Mumbai's go-to studio for gel nails, nail art, and premium manicures.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+                <a
+                  href="https://wa.me/919876543210?text=Hi%20NailyFuzz%2C%20I%20would%20like%20to%20book%20an%20appointment"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
                 >
-                  Book Appointment
-                </Link>
+                  <MessageCircle className="h-4 w-4" />
+                  Book via WhatsApp
+                </a>
                 <Link
                   to="/services"
                   className="inline-flex items-center justify-center rounded-full border border-border bg-background px-7 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
@@ -96,10 +96,10 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl text-foreground sm:text-4xl">
-              Why choose NailyFuzz
+              Why Choose NailyFuzz
             </h2>
             <p className="mt-4 text-muted-foreground">
-              A calm space, skilled hands, and results that feel perfectly you.
+              The details that make every visit feel special.
             </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -173,12 +173,15 @@ function Index() {
             Treat yourself to a moment of calm and come out polished. We can't wait to welcome you.
           </p>
           <div className="mt-8">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+            <a
+              href="https://wa.me/919876543210?text=Hi%20NailyFuzz%2C%20I%20would%20like%20to%20book%20an%20appointment"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
             >
+              <MessageCircle className="h-4 w-4" />
               Book your appointment
-            </Link>
+            </a>
           </div>
         </div>
       </section>
