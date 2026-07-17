@@ -95,7 +95,7 @@ function Index() {
       <section className="bg-background py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+            <h2 className="text-balance font-display text-3xl text-foreground sm:text-4xl">
               Why Choose NailyFuzz
             </h2>
             <p className="mt-4 text-muted-foreground">
@@ -128,7 +128,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div className="max-w-xl">
-              <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+              <h2 className="text-balance font-display text-3xl text-foreground sm:text-4xl">
                 Recent nail art
               </h2>
               <p className="mt-4 text-muted-foreground">
@@ -166,7 +166,7 @@ function Index() {
       {/* CTA */}
       <section className="bg-background py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl text-foreground sm:text-4xl">
+          <h2 className="text-balance font-display text-3xl text-foreground sm:text-4xl">
             Ready for your next set?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
@@ -177,7 +177,7 @@ function Index() {
               href="https://wa.me/919876543210?text=Hi%20NailyFuzz%2C%20I%20would%20like%20to%20book%20an%20appointment"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-8 py-3.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
             >
               <MessageCircle className="h-4 w-4" />
               Book your appointment

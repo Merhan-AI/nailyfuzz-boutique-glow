@@ -21,7 +21,7 @@ function ContactPage() {
     <div className="bg-background">
       <section className="border-b border-border bg-secondary/30 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="font-display text-4xl text-foreground sm:text-5xl">
+          <h1 className="text-balance font-display text-4xl text-foreground sm:text-5xl">
             Get in Touch
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
@@ -103,9 +103,10 @@ function ContactPage() {
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-gold">
                 <MessageCircle className="h-7 w-7" />
               </div>
-              <h2 className="font-display text-3xl text-card-foreground">
+              <h2 className="font-display text-2xl text-card-foreground sm:text-3xl">
                 Book on WhatsApp
               </h2>
+
               <p className="mx-auto mt-3 max-w-sm text-muted-foreground">
                 The fastest way to reserve your spot. Tap the button below and we'll confirm your appointment.
               </p>
