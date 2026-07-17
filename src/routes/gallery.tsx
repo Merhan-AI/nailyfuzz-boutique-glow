@@ -1,32 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
-
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Gallery | NailyFuzz" },
-      { name: "description", content: "Browse NailyFuzz nail art gallery featuring soft pink, gold, French, and bridal nail designs from our Mumbai studio." },
+      { name: "description", content: "Browse NailyFuzz nail art gallery showcasing gel nails, manicures, nail art designs, and extensions from our Mumbai studio." },
       { property: "og:title", content: "Gallery | NailyFuzz" },
-      { property: "og:description", content: "Browse NailyFuzz nail art gallery featuring soft pink, gold, French, and bridal nail designs." },
+      { property: "og:description", content: "Browse NailyFuzz nail art gallery showcasing gel nails, manicures, nail art designs, and extensions." },
     ],
   }),
   component: GalleryPage,
 });
 
 const images = [
-  { src: gallery1, alt: "Soft pink manicure with delicate gold foil accents", title: "Gold Foil Blush" },
-  { src: gallery2, alt: "French tips with gold glitter accent nail", title: "Classic French Glow" },
-  { src: gallery3, alt: "Rose gold chrome finish nail art", title: "Rose Gold Chrome" },
-  { src: gallery4, alt: "Pink ombre nails with tiny gold star details", title: "Starlit Ombre" },
-  { src: gallery5, alt: "Classic red manicure with gold jewelry", title: "Ruby Red Polish" },
-  { src: gallery6, alt: "Nude nails with pearl and gold embellishments", title: "Pearl Bridal Set" },
+  { text: "Classic Manicure", label: "Soft pink elegance" },
+  { text: "Gel Nails", label: "Glossy long-wear finish" },
+  { text: "Nail Art", label: "Hand-painted details" },
+  { text: "Pedicure", label: "Fresh polished feet" },
+  { text: "Nail Extensions", label: "Sculpted length" },
+  { text: "Bridal Set", label: "Pearl & gold accents" },
 ];
+
+const placeholderUrl = (text: string) =>
+  `https://placehold.co/600x600/fdf2f8/b8860b?text=${encodeURIComponent(text)}`;
 
 function GalleryPage() {
   return (
@@ -37,7 +33,7 @@ function GalleryPage() {
             The Gallery
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            A collection of our favorite sets created in the NailyFuzz studio. Soft, feminine, and endlessly inspiring.
+            A responsive showcase of nail art styles — from everyday polish to detailed custom designs.
           </p>
         </div>
       </section>
@@ -47,21 +43,22 @@ function GalleryPage() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {images.map((image) => (
               <div
-                key={image.title}
+                key={image.text}
                 className="group relative overflow-hidden rounded-2xl bg-card shadow-soft"
               >
                 <div className="aspect-square">
                   <img
-                    src={image.src}
-                    alt={image.alt}
+                    src={placeholderUrl(image.text)}
+                    alt={`${image.text} nail art placeholder`}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    width={816}
-                    height={816}
+                    width={600}
+                    height={600}
                     loading="lazy"
                   />
                 </div>
                 <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-foreground/60 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <p className="font-display text-lg text-background">{image.title}</p>
+                  <p className="font-display text-lg text-background">{image.text}</p>
+                  <p className="text-sm text-background/80">{image.label}</p>
                 </div>
               </div>
             ))}
