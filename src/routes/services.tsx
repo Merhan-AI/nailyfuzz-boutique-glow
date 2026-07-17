@@ -56,7 +56,7 @@ function ServicesPage() {
     <div className="bg-background">
       <section className="border-b border-border bg-secondary/30 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="font-display text-4xl text-foreground sm:text-5xl">
+          <h1 className="text-balance font-display text-4xl text-foreground sm:text-5xl">
             Our Services
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
