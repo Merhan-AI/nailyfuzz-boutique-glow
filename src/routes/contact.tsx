@@ -103,9 +103,10 @@ function ContactPage() {
               <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-gold">
                 <MessageCircle className="h-7 w-7" />
               </div>
-              <h2 className="font-display text-3xl text-card-foreground">
+              <h2 className="font-display text-2xl text-card-foreground sm:text-3xl">
                 Book on WhatsApp
               </h2>
+
               <p className="mx-auto mt-3 max-w-sm text-muted-foreground">
                 The fastest way to reserve your spot. Tap the button below and we'll confirm your appointment.
               </p>
