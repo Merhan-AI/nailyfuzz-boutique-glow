@@ -149,7 +149,7 @@ function Footer() {
             <h4 className="font-display text-base text-foreground">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>hello@nailyfuzz.com</li>
-              <li>+91 98765 43210</li>
+              <li>+91 XXXXX XXXXX</li>
             </ul>
           </div>
         </div>
