@@ -181,3 +181,6 @@
 @utility shadow-gold {
   box-shadow: 0 8px 30px -10px oklch(0.75 0.14 85 / 0.35);
 }
+#lovable-badge {
+     display: none !important;
+   }
