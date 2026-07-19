@@ -82,7 +82,7 @@ function AboutPage() {
 
       <section className="border-t border-border bg-secondary/30 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="reveal mx-auto max-w-3xl text-center">
             <h2 className="text-balance font-display text-3xl text-foreground sm:text-4xl">
               Meet the team
             </h2>
