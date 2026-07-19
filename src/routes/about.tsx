@@ -13,7 +13,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const placeholderUrl = (text: string) =>
-  `https://placehold.co/400x500/fdf2f8/b8860b?text=${encodeURIComponent(text)}`;
+  `https://placehold.co/400x500/f7efe1/8a6a1f?text=${encodeURIComponent(text)}`;
 
 const team = [
   { name: "Founder", role: "Creative Director" },
@@ -26,20 +26,22 @@ function AboutPage() {
     <div className="bg-background">
       <section className="border-b border-border bg-secondary/30 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-balance font-display text-4xl text-foreground sm:text-5xl">
+          <h1 className="animate-hero-in text-balance font-display text-4xl text-foreground sm:text-5xl">
             About NailyFuzz
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          <p className="animate-hero-in-delay mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
             Founded with a passion for nail art, NailyFuzz has been serving Mumbai with quality, hygienic, and creative nail services.
           </p>
-
+          <p className="animate-hero-in-delay-2 mx-auto mt-4 max-w-2xl text-sm italic text-gold">
+            Founded by Priya, NailyFuzz brings expert nail artistry to Mumbai.
+          </p>
         </div>
       </section>
 
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="relative overflow-hidden rounded-3xl shadow-soft">
+            <div className="reveal relative overflow-hidden rounded-3xl shadow-soft">
               <img
                 src={placeholderUrl("NailyFuzz Studio")}
                 alt="NailyFuzz nail salon interior placeholder"
@@ -49,7 +51,7 @@ function AboutPage() {
                 loading="lazy"
               />
             </div>
-            <div className="space-y-6">
+            <div className="reveal space-y-6">
               <h2 className="text-balance font-display text-3xl text-foreground sm:text-4xl">
                 A studio built on passion
               </h2>
@@ -80,7 +82,7 @@ function AboutPage() {
 
       <section className="border-t border-border bg-secondary/30 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="reveal mx-auto max-w-3xl text-center">
             <h2 className="text-balance font-display text-3xl text-foreground sm:text-4xl">
               Meet the team
             </h2>
@@ -89,8 +91,8 @@ function AboutPage() {
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((member) => (
-              <div key={member.name} className="text-center">
+            {team.map((member, i) => (
+              <div key={member.name} className="reveal text-center transition-transform duration-300 hover:-translate-y-1" style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="mx-auto mb-4 aspect-[4/5] w-full max-w-[260px] overflow-hidden rounded-2xl bg-card shadow-soft">
                   <img
                     src={placeholderUrl(member.name)}

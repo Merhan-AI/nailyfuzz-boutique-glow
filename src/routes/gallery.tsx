@@ -22,17 +22,17 @@ const images = [
 ];
 
 const placeholderUrl = (text: string) =>
-  `https://placehold.co/600x600/fdf2f8/b8860b?text=${encodeURIComponent(text)}`;
+  `https://placehold.co/600x600/f7efe1/8a6a1f?text=${encodeURIComponent(text)}`;
 
 function GalleryPage() {
   return (
     <div className="bg-background">
       <section className="border-b border-border bg-secondary/30 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-balance font-display text-4xl text-foreground sm:text-5xl">
+          <h1 className="animate-hero-in text-balance font-display text-4xl text-foreground sm:text-5xl">
             The Gallery
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          <p className="animate-hero-in-delay mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
             A responsive showcase of nail art styles — from everyday polish to detailed custom designs.
           </p>
 
@@ -42,10 +42,11 @@ function GalleryPage() {
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {images.map((image) => (
+            {images.map((image, i) => (
               <div
                 key={image.text}
-                className="group relative overflow-hidden rounded-2xl bg-card shadow-soft"
+                className="reveal group relative overflow-hidden rounded-2xl bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+                style={{ transitionDelay: `${i * 60}ms` }}
               >
                 <div className="aspect-square">
                   <img

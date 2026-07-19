@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -61,7 +62,7 @@ function Header() {
           ))}
           <Link
             to="/contact"
-            className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+            className="rounded-full bg-gold-gradient px-5 py-2.5 text-sm font-medium text-foreground shadow-gold transition-all hover:opacity-90 hover:shadow-lift"
           >
             Book Now
           </Link>
@@ -101,7 +102,7 @@ function Header() {
               <SheetClose asChild>
                 <Link
                   to="/contact"
-                  className="rounded-full bg-foreground px-6 py-3 text-center text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+                  className="rounded-full bg-gold-gradient px-6 py-3 text-center text-sm font-medium text-foreground shadow-gold transition-all hover:opacity-90"
                 >
                   Book Now
                 </Link>
@@ -148,7 +149,7 @@ function Footer() {
             <h4 className="font-display text-base text-foreground">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>hello@nailyfuzz.com</li>
-              <li>+91 98765 43210</li>
+              <li>+91 XXXXX XXXXX</li>
             </ul>
           </div>
         </div>
@@ -288,6 +289,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useScrollReveal();
 
   return (
     <QueryClientProvider client={queryClient}>

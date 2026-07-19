@@ -68,10 +68,11 @@ function ServicesPage() {
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
+            {services.map((service, i) => (
               <div
                 key={service.title}
-                className="flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:shadow-soft"
+                className="reveal flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-lift"
+                style={{ transitionDelay: `${i * 60}ms` }}
               >
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-gold">
                   <service.icon className="h-5 w-5" />
@@ -92,7 +93,7 @@ function ServicesPage() {
             ))}
           </div>
 
-          <div className="mt-14 rounded-2xl border border-border bg-secondary/40 p-8 text-center sm:p-12">
+          <div className="reveal mt-14 rounded-2xl border border-border bg-secondary/40 p-8 text-center sm:p-12">
             <h2 className="font-display text-2xl text-foreground sm:text-3xl">
               Have a custom design in mind?
             </h2>
@@ -100,10 +101,10 @@ function ServicesPage() {
               Share your ideas with us on WhatsApp and we'll help you plan the perfect set.
             </p>
             <a
-              href="https://wa.me/919876543210?text=Hi%20NailyFuzz%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services"
+              href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20NailyFuzz."
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-gold-gradient px-7 py-3 text-sm font-medium text-foreground shadow-gold transition-all hover:opacity-95 hover:shadow-lift"
             >
               Chat on WhatsApp
             </a>
