@@ -13,7 +13,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const placeholderUrl = (text: string) =>
-  `https://placehold.co/400x500/fdf2f8/b8860b?text=${encodeURIComponent(text)}`;
+  `https://placehold.co/400x500/f7efe1/8a6a1f?text=${encodeURIComponent(text)}`;
 
 const team = [
   { name: "Founder", role: "Creative Director" },
