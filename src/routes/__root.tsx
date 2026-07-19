@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const navLinks = [
   { to: "/", label: "Home" },
