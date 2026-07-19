@@ -14,7 +14,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const whatsappUrl =
-  "https://wa.me/919876543210?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20NailyFuzz.";
+  "https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20NailyFuzz.";
 
 function ContactPage() {
   return (
