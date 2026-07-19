@@ -58,7 +58,7 @@ function Index() {
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
-                  href="https://wa.me/919876543210?text=Hi%20NailyFuzz%2C%20I%20would%20like%20to%20book%20an%20appointment"
+                  href="https://wa.me/919892407227?text=Hi%20NailyFuzz%2C%20I%20would%20like%20to%20book%20an%20appointment"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
