@@ -62,7 +62,7 @@ function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <p className="text-sm text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-sm text-muted-foreground">+91 XXXXX XXXXX</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
