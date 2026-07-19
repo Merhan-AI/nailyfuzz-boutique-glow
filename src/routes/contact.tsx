@@ -34,7 +34,7 @@ function ContactPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Contact details + map */}
-            <div className="space-y-8">
+            <div className="reveal space-y-8">
               <div>
                 <h2 className="font-display text-2xl text-foreground">
                   Visit our studio
