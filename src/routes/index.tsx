@@ -13,14 +13,11 @@ export const Route = createFileRoute("/")({
       { title: "NailyFuzz | Premium Nail Salon in Mumbai" },
       { name: "description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon for gel nails, nail art, and premium manicures." },
       { property: "og:title", content: "NailyFuzz | Premium Nail Salon in Mumbai" },
-      { property: "og:description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon for gel nails, nail art, and premium manicures." },
+      { property: "og:description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon." },
     ],
   }),
   component: Index,
 });
-
-const WHATSAPP_URL =
-  "https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20NailyFuzz.";
 
 const highlights = [
   {
@@ -53,18 +50,18 @@ function Index() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="order-2 lg:order-1">
-              <h1 className="animate-hero-in font-display text-4xl leading-[1.1] text-foreground sm:text-5xl lg:text-6xl">
+              <h1 className="font-display text-4xl leading-[1.1] text-foreground sm:text-5xl lg:text-6xl">
                 Nail Art & Care, Perfected
               </h1>
-              <p className="animate-hero-in-delay mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
+              <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
                 NailyFuzz — Mumbai's go-to studio for gel nails, nail art, and premium manicures.
               </p>
-              <div className="animate-hero-in-delay-2 mt-8 flex flex-wrap items-center gap-4">
+              <div className="mt-8 flex flex-wrap items-center gap-4">
                 <a
-                  href={WHATSAPP_URL}
+                  href="https://wa.me/919876543210?text=Hi%20NailyFuzz%2C%20I%20would%20like%20to%20book%20an%20appointment"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-7 py-3 text-sm font-medium text-foreground shadow-gold transition-all hover:opacity-95 hover:shadow-lift"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
                 >
                   <MessageCircle className="h-4 w-4" />
                   Book via WhatsApp
@@ -77,7 +74,7 @@ function Index() {
                 </Link>
               </div>
             </div>
-            <div className="order-1 animate-hero-in lg:order-2">
+            <div className="order-1 lg:order-2">
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-soft lg:aspect-[16/10]">
                 <img
                   src={heroImage}
@@ -97,7 +94,7 @@ function Index() {
       {/* Highlights */}
       <section className="bg-background py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="reveal mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-balance font-display text-3xl text-foreground sm:text-4xl">
               Why Choose NailyFuzz
             </h2>
@@ -106,11 +103,10 @@ function Index() {
             </p>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {highlights.map((item, i) => (
+            {highlights.map((item) => (
               <div
                 key={item.title}
-                className="reveal group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-lift"
-                style={{ transitionDelay: `${i * 60}ms` }}
+                className="group rounded-2xl border border-border bg-card p-6 transition-all hover:shadow-soft"
               >
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-gold">
                   <item.icon className="h-5 w-5" />
@@ -130,13 +126,13 @@ function Index() {
       {/* Featured gallery */}
       <section className="bg-secondary/30 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="reveal flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
             <div className="max-w-xl">
               <h2 className="text-balance font-display text-3xl text-foreground sm:text-4xl">
                 Recent nail art
               </h2>
               <p className="mt-4 text-muted-foreground">
-                A glimpse of the elegant, feminine designs created in our Mumbai studio.
+                A glimpse of the soft, feminine designs created in our Mumbai studio.
               </p>
             </div>
             <Link
@@ -151,7 +147,7 @@ function Index() {
             {[gallery1, gallery2, gallery3, gallery4].map((src, i) => (
               <div
                 key={i}
-                className="reveal group relative aspect-square overflow-hidden rounded-2xl bg-card"
+                className="group relative aspect-square overflow-hidden rounded-2xl bg-card"
               >
                 <img
                   src={src}
@@ -169,7 +165,7 @@ function Index() {
 
       {/* CTA */}
       <section className="bg-background py-16 sm:py-20 lg:py-24">
-        <div className="reveal mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-balance font-display text-3xl text-foreground sm:text-4xl">
             Ready for your next set?
           </h2>
@@ -178,10 +174,10 @@ function Index() {
           </p>
           <div className="mt-8">
             <a
-              href={WHATSAPP_URL}
+              href="https://wa.me/919876543210?text=Hi%20NailyFuzz%2C%20I%20would%20like%20to%20book%20an%20appointment"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-7 py-3 text-sm font-medium text-foreground shadow-gold transition-all hover:opacity-95 hover:shadow-lift"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
             >
               <MessageCircle className="h-4 w-4" />
               Book your appointment

@@ -14,7 +14,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const whatsappUrl =
-  "https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20NailyFuzz.";
+  "https://wa.me/919876543210?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20NailyFuzz.";
 
 function ContactPage() {
   return (
@@ -34,7 +34,7 @@ function ContactPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Contact details + map */}
-            <div className="reveal space-y-8">
+            <div className="space-y-8">
               <div>
                 <h2 className="font-display text-2xl text-foreground">
                   Visit our studio
@@ -62,7 +62,7 @@ function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <p className="text-sm text-muted-foreground">+91 XXXXX XXXXX</p>
+                    <p className="text-sm text-muted-foreground">+91 98765 43210</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -99,8 +99,8 @@ function ContactPage() {
             </div>
 
             {/* WhatsApp CTA */}
-            <div className="reveal flex flex-col justify-center rounded-2xl border border-border bg-card p-8 text-center shadow-soft transition-all duration-300 hover:shadow-lift sm:p-12">
-              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-gold-gradient text-foreground shadow-gold">
+            <div className="flex flex-col justify-center rounded-2xl border border-border bg-card p-8 text-center shadow-soft sm:p-12">
+              <div className="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-gold">
                 <MessageCircle className="h-7 w-7" />
               </div>
               <h2 className="font-display text-2xl text-card-foreground sm:text-3xl">
@@ -114,7 +114,7 @@ function ContactPage() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gold-gradient px-8 py-4 text-base font-semibold text-foreground shadow-gold transition-all hover:opacity-95 hover:shadow-lift"
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-8 py-4 text-base font-medium text-background transition-colors hover:bg-foreground/90"
               >
                 <MessageCircle className="h-5 w-5" />
                 Book via WhatsApp

@@ -13,7 +13,6 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -62,7 +61,7 @@ function Header() {
           ))}
           <Link
             to="/contact"
-            className="rounded-full bg-gold-gradient px-5 py-2.5 text-sm font-medium text-foreground shadow-gold transition-all hover:opacity-90 hover:shadow-lift"
+            className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/90"
           >
             Book Now
           </Link>
@@ -102,7 +101,7 @@ function Header() {
               <SheetClose asChild>
                 <Link
                   to="/contact"
-                  className="rounded-full bg-gold-gradient px-6 py-3 text-center text-sm font-medium text-foreground shadow-gold transition-all hover:opacity-90"
+                  className="rounded-full bg-foreground px-6 py-3 text-center text-sm font-medium text-background transition-colors hover:bg-foreground/90"
                 >
                   Book Now
                 </Link>
@@ -149,7 +148,7 @@ function Footer() {
             <h4 className="font-display text-base text-foreground">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>hello@nailyfuzz.com</li>
-              <li>+91 XXXXX XXXXX</li>
+              <li>+91 98765 43210</li>
             </ul>
           </div>
         </div>
@@ -241,17 +240,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "NailyFuzz | Premium Nail Salon in Mumbai" },
-      { name: "description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon for gel nails, nail art, and premium manicures." },
+      { name: "description", content: "NailyFuzz is a modern nail salon in Mumbai offering manicures, pedicures, nail art, and luxury spa treatments in a soft, feminine boutique setting." },
       { name: "author", content: "NailyFuzz" },
       { property: "og:title", content: "NailyFuzz | Premium Nail Salon in Mumbai" },
-      { property: "og:description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon for gel nails, nail art, and premium manicures." },
+      { property: "og:description", content: "NailyFuzz is a modern nail salon in Mumbai offering manicures, pedicures, nail art, and luxury spa treatments." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@nailyfuzz" },
-      { name: "twitter:title", content: "NailyFuzz | Premium Nail Salon in Mumbai" },
-      { name: "twitter:description", content: "Book a luxury nail experience at NailyFuzz, Mumbai's boutique nail salon for gel nails, nail art, and premium manicures." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6161ac7f-f041-45ab-8f3b-3316938aee3b/id-preview-5cf06b23--3a4bef19-dcce-430b-9fb4-fca7ea880adb.lovable.app-1784287403789.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6161ac7f-f041-45ab-8f3b-3316938aee3b/id-preview-5cf06b23--3a4bef19-dcce-430b-9fb4-fca7ea880adb.lovable.app-1784287403789.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -289,7 +284,6 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  useScrollReveal();
 
   return (
     <QueryClientProvider client={queryClient}>
