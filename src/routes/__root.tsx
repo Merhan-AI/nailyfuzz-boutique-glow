@@ -102,7 +102,7 @@ function Header() {
               <SheetClose asChild>
                 <Link
                   to="/contact"
-                  className="rounded-full bg-foreground px-6 py-3 text-center text-sm font-medium text-background transition-colors hover:bg-foreground/90"
+                  className="rounded-full bg-gold-gradient px-6 py-3 text-center text-sm font-medium text-foreground shadow-gold transition-all hover:opacity-90"
                 >
                   Book Now
                 </Link>
