@@ -29,10 +29,10 @@ function GalleryPage() {
     <div className="bg-background">
       <section className="border-b border-border bg-secondary/30 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="text-balance font-display text-4xl text-foreground sm:text-5xl">
+          <h1 className="animate-hero-in text-balance font-display text-4xl text-foreground sm:text-5xl">
             The Gallery
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          <p className="animate-hero-in-delay mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
             A responsive showcase of nail art styles — from everyday polish to detailed custom designs.
           </p>
 
