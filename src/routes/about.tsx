@@ -91,8 +91,8 @@ function AboutPage() {
             </p>
           </div>
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((member) => (
-              <div key={member.name} className="text-center">
+            {team.map((member, i) => (
+              <div key={member.name} className="reveal text-center transition-transform duration-300 hover:-translate-y-1" style={{ transitionDelay: `${i * 80}ms` }}>
                 <div className="mx-auto mb-4 aspect-[4/5] w-full max-w-[260px] overflow-hidden rounded-2xl bg-card shadow-soft">
                   <img
                     src={placeholderUrl(member.name)}
