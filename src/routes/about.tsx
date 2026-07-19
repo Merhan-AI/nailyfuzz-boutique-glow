@@ -41,7 +41,7 @@ function AboutPage() {
       <section className="py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="relative overflow-hidden rounded-3xl shadow-soft">
+            <div className="reveal relative overflow-hidden rounded-3xl shadow-soft">
               <img
                 src={placeholderUrl("NailyFuzz Studio")}
                 alt="NailyFuzz nail salon interior placeholder"
@@ -51,7 +51,7 @@ function AboutPage() {
                 loading="lazy"
               />
             </div>
-            <div className="space-y-6">
+            <div className="reveal space-y-6">
               <h2 className="text-balance font-display text-3xl text-foreground sm:text-4xl">
                 A studio built on passion
               </h2>
