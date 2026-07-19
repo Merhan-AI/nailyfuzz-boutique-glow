@@ -22,7 +22,7 @@ const images = [
 ];
 
 const placeholderUrl = (text: string) =>
-  `https://placehold.co/600x600/fdf2f8/b8860b?text=${encodeURIComponent(text)}`;
+  `https://placehold.co/600x600/f7efe1/8a6a1f?text=${encodeURIComponent(text)}`;
 
 function GalleryPage() {
   return (
